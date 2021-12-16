@@ -1,5 +1,5 @@
 # Movie Reservation Site
-항공 예약 사이트
+영화 예약 사이트
 
 
 ## License
