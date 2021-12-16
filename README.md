@@ -1,5 +1,5 @@
 # Airline-Reservation-Site
-Airline Reservation Site with jsp
+항공 예약 사이트
 
 
 ## License
