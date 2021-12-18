@@ -48,12 +48,7 @@
     <a href="./movieChartView.reservation" class="list-group-item d-inline-block collapsed" data-parent="#sidebar">
       <img style="width: 20px;" src="./img/clock.svg"><span class="d-none d-md-inline">영화 상영시간</span>
     </a>
-    <a href="#search" class="list-group-item d-inline-block collapsed"
-    data-parent="#sidebar" data-toggle="collapse" aria-expanded="false">
-    </a>
-    <div class="collapse" id="search">
-      <div class="input-group p-2" style="background-color:#1c1c1c;">
-        <input type="text" class="form-control" placeholder="내용을 입력하세요.">
+      
       </div>
     </div>
   </div>
