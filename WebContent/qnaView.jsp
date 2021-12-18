@@ -10,7 +10,7 @@
           <div class="page-header mt-3">
             <h2>Q & A</h2>
           </div>
-          <p class="lead">회원님의 궁금증을 풀어드립니다.</p>
+
           <hr>
           <div class="panel panel-default">
             <div class="panel-heading mt-3">
@@ -20,7 +20,7 @@
             </div>
             <div id="collapse1" class="panel-collapse collapse in">
               <div class="panel-body">
-                                 저희 웹 사이트의 게시판은 <strong>누구나</strong> 이용할 수 있습니다.
+                                 저희 웹 사이트의 게시판은 <strong>회원만</strong> 이용할 수 있습니다.
               </div>
             </div>
             <br></br>
@@ -31,7 +31,7 @@
             </div>
             <div id="collapse2" class="panel-collapse collapse in">
               <div class="panel-body">
-                                 고객센터의 전화번호는 <strong>02)000-0000</strong>입니다.
+                                 고객센터의 전화번호는 <strong>031)000-0000</strong>입니다.
               </div>
             </div>
             <br></br>
@@ -42,14 +42,14 @@
             </div>
             <div id="collapse3" class="panel-collapse collapse in">
               <div class="panel-body">
-                                 고객센터는 <strong>24시간</strong> 운영합니다. 언제든 전화주세요.
+                                 고객센터는 코로나로 인해 <strong>21시까지</strong> 운영합니다.
               </div>
             </div>
             <br></br>
           </div>
           <br></br>
           <div class="alert alert-warning">
-            이외의 사항은 고객센터로 전화해주시면 친절히 답변해드리겠습니다. ☎ 02-0000-0000
+            이외의 사항은 고객센터로 전화해주시면 친절히 답변해드리겠습니다. ☎ 031-0000-0000
           </div>
         </main>
       </div>
