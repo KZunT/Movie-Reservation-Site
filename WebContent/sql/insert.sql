@@ -16,3 +16,5 @@ INSERT INTO RESERVATION_SEAT VALUES (2, '배준일', 22);
 INSERT INTO RESERVATION_SEAT VALUES (3, '김준태', 33);
 
 ----------------------------------------------------------- 각각 실행
+
+INSERT INTO RESERVATION_TICKET VALUES (1, '스파이더맨 노웨이 홈',3, 33,'NH채움,일시불','2021-01-01 00:00:00');

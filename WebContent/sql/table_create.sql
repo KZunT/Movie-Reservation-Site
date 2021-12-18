@@ -45,10 +45,11 @@ CREATE TABLE RESERVATION_SEAT (
 ----------------------------------------------------------- 각각 실행
 
 CREATE TABLE RESERVATION_TICKET (
-  movieID INT,
+  ticketID INT,
+  movieTitle VARCHAR(50),
   userID VARCHAR(30),
   seatID INT,
   ticket_payment VARCHAR(100),
-  ticket_time VARCHAR(100),
-  PRIMARY KEY (movieID, seatID, userID)
+  ticket_time DATETIME,
+  PRIMARY KEY (TicketID)
 ) 
