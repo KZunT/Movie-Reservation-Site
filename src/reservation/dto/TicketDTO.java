@@ -5,7 +5,7 @@ import java.sql.Date;
 public class TicketDTO {
 
 	private int ticketID;
-	private int movieID;
+	private String movieTitle;
 	private String userID;
 	private int seatID;
 	private String ticket_payment;
@@ -17,11 +17,11 @@ public class TicketDTO {
 	public void setTicketID(int ticketID) {
 		this.ticketID = ticketID;
 	}
-	public int getMovieID() {
-		return movieID;
+	public String getMovieTitle() {
+		return movieTitle;
 	}
-	public void setMovieID(int movieID) {
-		this.movieID = movieID;
+	public void setMovieTitle(String movieTitle) {
+		this.movieTitle = movieTitle;
 	}
 	
 	public String getUserID() {
@@ -52,9 +52,9 @@ public class TicketDTO {
 		
 	}
 	
-	public TicketDTO(int ticketID,int movieID, String userID,int seatID,String ticket_payment, Date ticket_time) {
+	public TicketDTO(int ticketID,String movieTitle, String userID,int seatID,String ticket_payment, Date ticket_time) {
 		this.ticketID = ticketID;
-		this.movieID = movieID;
+		this.movieTitle = movieTitle;
 		this.userID = userID;
 		this.seatID = seatID;
 		this.ticket_payment = ticket_payment;

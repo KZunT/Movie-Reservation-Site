@@ -23,7 +23,7 @@ public class UserTicketViewCommand implements Command {
 		ArrayList<TicketDTO> list = ticketDAO.getList(pageNumber);
 		request.setAttribute("list", list);
 		request.setAttribute("pageNumber", pageNumber);
-//		request.setAttribute("nextExist", TicketDAO.nextPage(pageNumber));
+		request.setAttribute("nextExist", ticketDAO.nextPage(pageNumber));
 		return new ActionForward(isRedirect, viewPage);
 	}
 	

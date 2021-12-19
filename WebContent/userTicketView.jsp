@@ -27,8 +27,9 @@
          	  <c:forEach items="${ list }" var="ticket">
               <tr>
                 <td style="text-align: center;">${ ticket.ticketID }</td>
+                <td><a href="./userTicketInfoView.reservation?ticketID=${ ticket.ticketID }" style="color:#000000;">
                 <c:choose>
-                	<c:when test="${ticket.movieID == 0}">
+                	<c:when test="${ticket.ticketID == 0}">
                 		없는 영화입니다.
                 	</c:when>
                 	<c:otherwise>

@@ -35,6 +35,7 @@ import reservation.command.user.UserLoginCommand;
 import reservation.command.user.UserLogoutCommand;
 import reservation.command.user.UserManageDeleteCommand;
 import reservation.command.user.UserPasswordFindCommand;
+import reservation.command.user.UserTicketInfoViewCommand;
 import reservation.command.user.UserTicketViewCommand;
 import reservation.util.ServerUtil;
 import reservatoin.command.Command;
@@ -110,6 +111,11 @@ public class FrontController extends HttpServlet {
 		} else if(target.equals(ServerUtil.relativePath + "boardInfoView.reservation")) {
 			command = new BoardInfoViewCommand();
 			forward = command.execute(request, response);
+		}
+		  else if(target.equals(ServerUtil.relativePath + "userTicketInfoView.reservation")) {  	
+			command = new UserTicketInfoViewCommand();
+		    forward = command.execute(request, response);
+			
 		} else if(target.equals(ServerUtil.relativePath + "boardEditView.reservation")) {
 			command = new BoardEditViewCommand();
 			forward = command.execute(request, response);

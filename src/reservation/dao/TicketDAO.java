@@ -81,63 +81,34 @@ public class TicketDAO {
 //		return -1; // 데이터베이스 오류
 //	}	
 	
-//	public boolean nextPage(int pageNumber) {
-//		String SQL = "SELECT * FROM RESERVATION_TICKET WHERE ticketID;";
-//		Connection conn = null;
-//		PreparedStatement pstmt = null;
-//		ResultSet rs = null;
-//		try {
-//			conn = DatabaseUtil.getConnection();
-//			pstmt = conn.prepareStatement(SQL);
-//			pstmt.setInt(1, getNext() - (pageNumber) * 10);
-//			rs = pstmt.executeQuery();
-//			if (rs.next()) {
-//				return true;
-//			}
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		} finally {
-//			try {if(conn != null) conn.close();} catch (Exception e) {e.printStackTrace();}
-//			try {if(pstmt != null) pstmt.close();} catch (Exception e) {e.printStackTrace();}
-//			try {if(rs != null) rs.close();} catch (Exception e) {e.printStackTrace();}
-//		}
-//		return false; // 데이터베이스 오류
-//	}
+	public boolean nextPage(int pageNumber) {
+		String SQL = "SELECT * FROM RESERVATION_TICKET WHERE ticketID;";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			conn = DatabaseUtil.getConnection();
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setInt(1, getNext() - (pageNumber) * 10);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				return true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {if(conn != null) conn.close();} catch (Exception e) {e.printStackTrace();}
+			try {if(pstmt != null) pstmt.close();} catch (Exception e) {e.printStackTrace();}
+			try {if(rs != null) rs.close();} catch (Exception e) {e.printStackTrace();}
+		}
+		return false; // 데이터베이스 오류
+	}
 	
 	
-//	public ArrayList<TicketDTO> getList(int pageNumber) {
-//		String SQL = "SELECT * FROM RESERVATION_TICKET WHERE ticketID < ? ORDER BY ticketID DESC LIMIT 10";
-//		ArrayList<TicketDTO> list = new ArrayList<TicketDTO>();
-//		Connection conn = null;
-//		PreparedStatement pstmt = null;
-//		ResultSet rs = null;
-//		try {
-//			conn = DatabaseUtil.getConnection();
-//			pstmt = conn.prepareStatement(SQL);
-//			pstmt.setInt(1, getNext() - (pageNumber - 1) * 10);
-//			rs = pstmt.executeQuery();
-//			while (rs.next()) {
-//				TicketDTO ticket = new TicketDTO();
-//				ticket.setTicketID(rs.getInt(1));
-//				ticket.setMovieID(rs.getInt(2));
-//				ticket.setUserID(rs.getString(3));
-//				ticket.setSeatID(rs.getInt(4));
-//				ticket.setTicket_payment(rs.getString(5));
-//				ticket.setTicket_time(rs.getDate(6));
-//				list.add(ticket);
-//			}
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		} finally {
-//			try {if(conn != null) conn.close();} catch (Exception e) {e.printStackTrace();}
-//			try {if(pstmt != null) pstmt.close();} catch (Exception e) {e.printStackTrace();}
-//			try {if(rs != null) rs.close();} catch (Exception e) {e.printStackTrace();}
-//		}
-//		return list; // 데이터베이스 오류
-//	}
 	
 	public  ArrayList<TicketDTO> getList(int pageNumber) {
 		String SQL = "SELECT * FROM RESERVATION_TICKET WHERE ticketID < ? ORDER BY ticketID DESC LIMIT 10";
+		//String SQL = "SELECT * FROM RESERVATION_TICKET WHERE ticketID";
 		ArrayList<TicketDTO> list = new ArrayList<TicketDTO>();
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -150,7 +121,7 @@ public class TicketDAO {
 			while (rs.next()) {
 				TicketDTO ticket = new TicketDTO();
 				ticket.setTicketID(rs.getInt(1));
-				ticket.setMovieID(rs.getInt(2));
+				ticket.setMovieTitle(rs.getString(2));
 				ticket.setUserID(rs.getString(3));
 				ticket.setSeatID(rs.getInt(4));
 				ticket.setTicket_payment(rs.getString(5));
@@ -180,11 +151,12 @@ public class TicketDAO {
 			while (rs.next()) {
 				TicketDTO ticket = new TicketDTO();
 				ticket.setTicketID(rs.getInt(1));
-				ticket.setMovieID(rs.getInt(2));
+				ticket.setMovieTitle(rs.getString(2));
 				ticket.setUserID(rs.getString(3));
 				ticket.setSeatID(rs.getInt(4));
 				ticket.setTicket_payment(rs.getString(5));
 				ticket.setTicket_time(rs.getDate(6));
+				return ticket;
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

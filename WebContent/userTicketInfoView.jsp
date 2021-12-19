@@ -14,12 +14,24 @@
           <hr>
           <form class="pt-3" style="max-width:920px;">
             <div class="form-group">
+              <label>예약자 명</label>
+              <p class="boardTitle">${ ticket.userID }</p>
+            </div>
+            <div class="form-group">
               <label>영화 제목</label>
               <p class="boardTitle">${ ticket.movieTitle }</p>
             </div>
             <div class="form-group">
+              <label>좌석 번호</label>
+              <p class="boardTitle">${ ticket.seatID }</p>
+            </div>
+            <div class="form-group">
               <label>결제 수단</label>
-              <p class="boardContent">${ ticket.ticket_payment }</p>
+              <p class="boardTitle">${ ticket.ticket_payment }</p>
+            </div>
+            <div class="form-group">
+              <label>결제 날짜</label>
+              <p class="boardTitle">${ ticket.ticket_time }</p>
             </div>
             <a href="./userTicketView.reservation" class="btn btn-primary">예매 목록</a>
           </form>
