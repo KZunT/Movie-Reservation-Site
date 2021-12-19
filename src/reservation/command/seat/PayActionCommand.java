@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import reservation.dao.SeatDAO;
+import reservation.dao.TicketDAO;
 import reservation.frontController.ActionForward;
 import reservation.util.ModalUtil;
 import reservatoin.command.Command;
@@ -38,6 +39,8 @@ public class PayActionCommand implements Command {
 				isRedirect = true;
 			} else {
 				SeatDAO seatDAO = new SeatDAO();
+				TicketDAO ticketDAO = new TicketDAO();
+				ticketDAO.ticketing(movieID, userID, seatID);
 				int result = seatDAO.write(movieID, userID, seatID);
 				if (result == -1) {
 					session.setAttribute("modal", new ModalUtil("오류 메시지", "오류가 발생했습니다.", ModalUtil.ERROR));

@@ -10,7 +10,7 @@
           <div class="page-header mt-3">
             <h2>결제 완료</h2>
           </div>
-          <p class="lead">결제가 완료되었습니다.</p>
+          <p class="lead">예매가 완료되었습니다.</p>
         </main>
       </div>
     </div>

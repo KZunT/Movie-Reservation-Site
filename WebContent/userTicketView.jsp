@@ -19,7 +19,6 @@
                 <th class="mobile" style="width:120px; text-align:center;">티켓 번호</th>
                 <th style="text-align:center;">영화 제목</th>
                 <th class="mobile" style="width:120px; text-align:center;">좌석 정보</th>
-                <th class="mobile" style="width:150px; text-align:center;">결제 수단</th>
                 <th class="mobile" style="width:150px; text-align:center;">결제 날짜</th>
               </tr>
             </thead>
@@ -38,7 +37,6 @@
                 </c:choose>
                 </a></td>
                 <td style="text-align: center;">${ ticket.seatID }</td>
-                <td style="text-align: center;">${ ticket.ticket_payment }</td>
                 <td style="text-align: center;">${ ticket.ticket_time }</td>
               </tr>
               </c:forEach>

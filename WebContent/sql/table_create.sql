@@ -49,7 +49,6 @@ CREATE TABLE RESERVATION_TICKET (
   movieTitle VARCHAR(50),
   userID VARCHAR(30),
   seatID INT,
-  ticket_payment VARCHAR(100),
   ticket_time DATETIME,
   PRIMARY KEY (TicketID)
 ) 

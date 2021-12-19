@@ -26,10 +26,6 @@
               <p class="boardTitle">${ ticket.seatID }</p>
             </div>
             <div class="form-group">
-              <label>결제 수단</label>
-              <p class="boardTitle">${ ticket.ticket_payment }</p>
-            </div>
-            <div class="form-group">
               <label>결제 날짜</label>
               <p class="boardTitle">${ ticket.ticket_time }</p>
             </div>
