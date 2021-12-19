@@ -1,7 +1,7 @@
 package reservation.command.user;
 
 import java.util.ArrayList;
-
+import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -14,13 +14,17 @@ public class UserTicketViewCommand implements Command {
 
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
 		boolean isRedirect = false;
+		HttpSession session = request.getSession();
 		String viewPage = "userTicketView.jsp";
 		int pageNumber = 1;
 		if (request.getParameter("pageNumber") != null) {
 			pageNumber = Integer.parseInt(request.getParameter("pageNumber"));
 		}
+		String userID = (String) session.getAttribute("userID");
+//		System.out.println(userID);
+		
 		TicketDAO ticketDAO = new TicketDAO();
-		ArrayList<TicketDTO> list = ticketDAO.getList(pageNumber);
+		ArrayList<TicketDTO> list = ticketDAO.getList(pageNumber,userID);
 		request.setAttribute("list", list);
 		request.setAttribute("pageNumber", pageNumber);
 		request.setAttribute("nextExist", ticketDAO.nextPage(pageNumber));

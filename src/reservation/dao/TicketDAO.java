@@ -10,7 +10,7 @@ import reservation.dto.TicketDTO;
 import reservation.util.DatabaseUtil;
 
 public class TicketDAO {
-
+	
 	public Date getDate() {
 		String SQL = "SELECT now()";
 		Connection conn = null;
@@ -82,7 +82,7 @@ public class TicketDAO {
 //	}	
 	
 	public boolean nextPage(int pageNumber) {
-		String SQL = "SELECT * FROM RESERVATION_TICKET WHERE ticketID;";
+		String SQL = "SELECT * FROM RESERVATION_TICKET;";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -105,18 +105,19 @@ public class TicketDAO {
 	}
 	
 	
-	
-	public  ArrayList<TicketDTO> getList(int pageNumber) {
-		String SQL = "SELECT * FROM RESERVATION_TICKET WHERE ticketID < ? ORDER BY ticketID DESC LIMIT 10";
-		//String SQL = "SELECT * FROM RESERVATION_TICKET WHERE ticketID";
+	public  ArrayList<TicketDTO> getList(int pageNumber,String userID) {
+		//String SQL = "SELECT * FROM RESERVATION_TICKET WHERE ticketID < ? ORDER BY ticketID DESC LIMIT 10";
+		String SQL = "SELECT * FROM RESERVATION_TICKET WHERE ticketID < ?  AND userID = ? ORDER BY ticketID DESC LIMIT 10";
 		ArrayList<TicketDTO> list = new ArrayList<TicketDTO>();
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
+		System.out.println(userID+"test¿‘¥œ¥Ÿ");
 		try {
 			conn = DatabaseUtil.getConnection();
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setInt(1, getNext() - (pageNumber - 1) * 10);
+			pstmt.setString(2, userID);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				TicketDTO ticket = new TicketDTO();
@@ -142,7 +143,8 @@ public class TicketDAO {
 		String SQL = "SELECT * FROM RESERVATION_TICKET WHERE ticketID = ?";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		ResultSet rs = null;
+		ResultSet rs = null;		
+		
 		try {
 			conn = DatabaseUtil.getConnection();
 			pstmt = conn.prepareStatement(SQL);

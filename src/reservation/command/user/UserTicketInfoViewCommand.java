@@ -25,6 +25,7 @@ public class UserTicketInfoViewCommand implements Command {
 			viewPage = "mainView.reservation";
 			isRedirect = true;
 		}
+		
 		TicketDTO ticket = new TicketDAO().getTicket(ticketID);
 //		if (ticket.getBbsAvailable() == 0) {
 //			session.setAttribute("modal", new ModalUtil("오류 메시지", "없는 티켓 입니다.", ModalUtil.ERROR));
