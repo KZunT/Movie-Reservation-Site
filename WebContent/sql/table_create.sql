@@ -1,3 +1,6 @@
+--CREATE DATABASE MovieDB;   --DATABASE의 이름은 MovieDB여야 합니다.
+--use MovieDB;
+
 CREATE TABLE RESERVATION_USER (
    userID VARCHAR(30) NOT NULL,
    userPassword VARCHAR(64),

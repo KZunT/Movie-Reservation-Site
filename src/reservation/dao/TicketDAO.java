@@ -191,49 +191,7 @@ public class TicketDAO {
 			try {if(rs != null) rs.close();} catch (Exception e) {e.printStackTrace();}
 		}
 		return null; // 데이터베이스 오류
-	}
-	
-//	public int update(int bbsID, String bbsTitle, String bbsContent) {
-//		String SQL = "UPDATE RESERVATION_BBS SET bbsTitle = ?, bbsContent = ? WHERE bbsID = ?";
-//		Connection conn = null;
-//		PreparedStatement pstmt = null;
-//		ResultSet rs = null;		
-//		try {
-//			conn = DatabaseUtil.getConnection();
-//			pstmt = conn.prepareStatement(SQL);
-//			pstmt.setString(1, bbsTitle);
-//			pstmt.setString(2, bbsContent);
-//			pstmt.setInt(3, bbsID);
-//			return pstmt.executeUpdate();
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		} finally {
-//			try {if(conn != null) conn.close();} catch (Exception e) {e.printStackTrace();}
-//			try {if(pstmt != null) pstmt.close();} catch (Exception e) {e.printStackTrace();}
-//			try {if(rs != null) rs.close();} catch (Exception e) {e.printStackTrace();}
-//		}
-//		return -1; // 데이터베이스 오류
-//	}
-//	
-//	public int delete(int bbsID) {
-//		String SQL = "UPDATE RESERVATION_BBS SET bbsAvailable = 0 WHERE bbsID = ?";
-//		Connection conn = null;
-//		PreparedStatement pstmt = null;
-//		ResultSet rs = null;
-//		try {
-//			conn = DatabaseUtil.getConnection();
-//			pstmt = conn.prepareStatement(SQL);
-//			pstmt.setInt(1, bbsID);
-//			return pstmt.executeUpdate();
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		} finally {
-//			try {if(conn != null) conn.close();} catch (Exception e) {e.printStackTrace();}
-//			try {if(pstmt != null) pstmt.close();} catch (Exception e) {e.printStackTrace();}
-//			try {if(rs != null) rs.close();} catch (Exception e) {e.printStackTrace();}
-//		}
-//		return -1; // 데이터베이스 오류
-//	}	
+	}	
 	
 	
 }

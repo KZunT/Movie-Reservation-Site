@@ -1,3 +1,5 @@
+--use MovieDB;
+
 select * from RESERVATION_USER;
 
 select * from RESERVATION_BBS;
